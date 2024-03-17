@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../node-crash-course"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "node-crash-course"
+	}
+}
