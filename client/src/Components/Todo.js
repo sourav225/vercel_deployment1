@@ -9,6 +9,8 @@ function Todo() {
   const [decision, setDecision] = useState(false);
   const [input, setInput] = useState("");
   const [nCheck, setCheck] = useState("");
+
+  axios.defaults.withCredentials = true;
   
 
   useEffect(() => {
