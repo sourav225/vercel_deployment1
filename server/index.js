@@ -6,10 +6,13 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin:["https://vercel-deployment1-client.vercel.app"],
-  methods:["GET","PUT","POST","DELETE"],
-  credentials:true
+  origin: "https://vercel-deployment1-client.vercel.app",
+  methods: ["GET", "PUT", "POST", "DELETE"],
+  credentials: true,
+  exposedHeaders: ["Content-Length", "Authorization"],
+  maxAge: 86400 // 24 hours in seconds
 }));
+
 const PORT = 3550;
 
 mongoose.connect("mongodb+srv://souravlayekjsr100:Sourav@123@cluster0.yhf674r.mongodb.net/Project?retryWrites=true&w=majority", {
