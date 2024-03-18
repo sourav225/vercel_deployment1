@@ -5,10 +5,14 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:[""],
+  methods:["GET","PUT","POST","DELETE"],
+  credentials:true
+}));
 const PORT = 3550;
 
-mongoose.connect("mongodb://localhost:27017/Project", {
+mongoose.connect("mongodb+srv://souravlayekjsr100:Sourav@123@cluster0.yhf674r.mongodb.net/Project?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
