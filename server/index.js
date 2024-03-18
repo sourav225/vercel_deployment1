@@ -18,7 +18,6 @@ mongoose.connect("mongodb+srv://souravlayekjsr100:Sourav@123@cluster0.yhf674r.mo
 });
 
 app.get("/display", async (req, res) => {
-  res.header("Access-Control-Allow-Origin");
   const result = await todo.find();
   res.json(result);
 });
