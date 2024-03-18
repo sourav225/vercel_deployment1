@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin:["https://vercel-deployment1-client.vercel.app"],
+  origin:"*",
   methods:["GET","PUT","POST","DELETE"],
   credentials:true
 }));
