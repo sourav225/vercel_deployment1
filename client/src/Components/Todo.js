@@ -9,7 +9,7 @@ function Todo() {
   const [decision, setDecision] = useState(false);
   const [input, setInput] = useState("");
   const [nCheck, setCheck] = useState("");
-  const axios.defaults.withCredentials=true;
+  axios.defaults.withCredentials=true;
 
   useEffect(() => {
     const fetchData = async () => {
