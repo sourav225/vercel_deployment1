@@ -9,11 +9,12 @@ function Todo() {
   const [decision, setDecision] = useState(false);
   const [input, setInput] = useState("");
   const [nCheck, setCheck] = useState("");
+  const axios.defaults.withCredentials=true;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resdet = await axios.get("http://localhost:3550/display");
+        const resdet = await axios.get("https://vercel-deployment1-server.vercel.app/display");
         setList(resdet.data.reverse());
         console.log(resdet);
       } catch (error) {
@@ -30,7 +31,7 @@ function Todo() {
     setCheck(newCheck);
     console.log(newCheck);
     try {
-      const response = await axios.put("http://localhost:3550/checkmark", { check: newCheck, task });
+      const response = await axios.put("https://vercel-deployment1-server.vercel.app/checkmark", { check: newCheck, task });
       if (response.data.res === "Success") {
         setCheck("");
       }
@@ -50,7 +51,7 @@ function Todo() {
   const handleDelete = async (item) => {
     toDelete(item);
     try {
-      const response = await axios.delete(`http://localhost:3550/tododelete`, { data: { tobedelete: item } });
+      const response = await axios.delete(`https://vercel-deployment1-server.vercel.app/tododelete`, { data: { tobedelete: item } });
       if (response.data.res === "Success") {
         toDelete("");
       }
@@ -68,7 +69,7 @@ function Todo() {
       try {
         console.log(tobeedit);
         console.log(input);
-        const response = await axios.put("http://localhost:3550/tobeedited", { tobeedit: tobeedit, input: input });
+        const response = await axios.put("https://vercel-deployment1-server.vercel.app/tobeedited", { tobeedit: tobeedit, input: input });
 
         if (response.data.res === "Success") {
           setInput("");
@@ -82,7 +83,7 @@ function Todo() {
   const addtodb = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3550/addtotask", { tobedone });
+      const response = await axios.post("https://vercel-deployment1-server.vercel.app/addtotask", { tobedone });
       if (response.data.res === "Success") {
         todoTask("");
         console.log(response.data.res);
