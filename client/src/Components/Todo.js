@@ -84,6 +84,9 @@ function Todo() {
   };
   const addtodb = async (e) => {
     e.preventDefault();
+
+    const regex = /\S/;
+    if (regex.test(tobedone)) {
     try {
       const response = await axios.post("https://vercel-deployment1-server.vercel.app/addtotask", { tobedone });
       if (response.data.res === "Success") {
@@ -92,6 +95,7 @@ function Todo() {
       }
     } catch (err) {
       console.log("Error adding task:" + err);
+    }
     }
   };
   return (
