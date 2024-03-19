@@ -15,7 +15,8 @@ app.use(cors({
 
 const PORT = 3550;
 
-mongoose.connect("mongodb+srv://souravlayekjsr100:Sourav@123@cluster0.yhf674r.mongodb.net/Project?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://souravlayekjsr100:Sourav%40123@cluster0.yhf674r.mongodb.net/Project?retryWrites=true&w=majority
+");
 
 app.get("/display", async (req, res) => {
   const result = await todo.find();
