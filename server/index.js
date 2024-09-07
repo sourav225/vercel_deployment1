@@ -8,10 +8,11 @@ app.use(express.json());
 app.use(cors({
   origin: "https://vercel-deployment1-client.vercel.app",
   methods: ["GET", "PUT", "POST", "DELETE"],
-  credentials: true,
   exposedHeaders: ["Content-Length", "Authorization"],
   maxAge: 86400 // 24 hours in seconds
 }));
+
+app.options('*', cors()); 
 
 const PORT = 3550;
 
